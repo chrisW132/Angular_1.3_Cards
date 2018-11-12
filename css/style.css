@@ -1,0 +1,305 @@
+body {
+	font-family: 'Lato';
+}
+.txtWhite {
+	color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	font-family: 'Montserrat';
+}
+section {
+	padding: 6rem 0;
+}
+section h2 {
+	font-size: 2.25rem;
+	line-height: 2rem;
+}
+@media (min-width: 992px) {
+	section h2 {
+		font-size: 3rem;
+		line-height: 2.5rem;
+	}
+}
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex-row .item-flex {
+	display: flex;
+	flex-direction: column;
+	/*@include mq-tablet{
+      flex-direction: unset;
+    }*/
+}
+.flex-row .item-flex .flex-contain {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.flex-row .item-flex .flex-contain p {
+	flex: 1 0 auto;
+}
+.proCard .card, .skills .card {
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	border: 0;
+	font-weight: 400;
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: rgba(44, 62, 80, 0.75);
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: .25rem;
+}
+.proCard .card .overlay .mask, .skills .card .overlay .mask {
+	opacity: 0;
+	-webkit-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.proCard .card .view.view-cascade, .skills .card .view.view-cascade {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: .25rem;
+	border-radius: .25rem;
+	background: url("../img/downTownAustin.jpg");
+	background-size: cover;
+	margin: .75rem;
+}
+.proCard .card .view.view-cascade img, .skills .card .view.view-cascade img {
+	display: block;
+	margin: 3rem auto -5rem;
+	width: 15rem;
+	height: 15rem;
+	border-radius: 10rem;
+	border: .5rem solid #2C3E50;
+}
+.proCard .card .view.view-cascade .mask, .skills .card .view.view-cascade .mask {
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+}
+.proCard .card .card-body, .skills .card .card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1.25rem;
+	padding-top: 6rem;
+}
+.proCard .card .row, .skills .card .row {
+	margin: 0px;
+	padding-bottom: .5rem;
+}
+.proCard .card .iconBtn, .skills .card .iconBtn {
+	border: solid 1px #0d525a;
+	vertical-align: middle;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	padding: 0;
+	font-size: 2.5rem;
+	cursor: pointer;
+}
+.proCard .card .iconBtn:hover, .skills .card .iconBtn:hover {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	color: rgba(13, 82, 90, 0.5);
+}
+.proCard .card .iconBtn:hover i, .skills .card .iconBtn:hover i {
+	color: #18BC9C;
+}
+.proCard .card a, .skills .card a {
+	color: #fff;
+}
+.proCard .card a .svg, .skills .card a .svg {
+	background: url(../img/invision.svg);
+	width: 3.5rem;
+	height: 3.5rem;
+	background-size: contain;
+	margin: 2px auto;
+}
+.proCard .card a:hover .svg, .skills .card a:hover .svg {
+	background: url(../img/invision-hover.svg);
+	background-size: contain;
+}
+.AngularCards {
+	/*card */
+}
+.AngularCards .floating-label-form-group {
+	padding-left: 0px;
+	border-left: 0px;
+}
+.AngularCards .card {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border-radius: .25rem;
+	/*.card-cascade.narrower */
+}
+.AngularCards .card.card-cascade.narrower {
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	border: 0;
+	font-weight: 400;
+	margin-top: 52px;
+	margin-bottom: 1.5rem;
+}
+.AngularCards .card.card-cascade.narrower .card-img-top {
+	width: 100%;
+	border-top-left-radius: calc(.25rem - 1px);
+	border-top-right-radius: calc(.25rem - 1px);
+}
+.AngularCards .card.card-cascade.narrower .waves-effect {
+	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.AngularCards .card.card-cascade.narrower .rgba-white-slight, .AngularCards .card.card-cascade.narrower .rgba-white-slight:after {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+.AngularCards .card.card-cascade.narrower .view {
+	position: relative;
+	overflow: hidden;
+	cursor: default;
+}
+.AngularCards .card.card-cascade.narrower .view img {
+	position: relative;
+	display: block;
+}
+.AngularCards .card.card-cascade.narrower .view.view-cascade {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: .25rem;
+	border-radius: .25rem;
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-top: -1.25rem;
+}
+.AngularCards .card.card-cascade.narrower .view .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+}
+.AngularCards .card.card-cascade.narrower .overlay .mask {
+	opacity: 0;
+	-webkit-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.AngularCards .card.card-cascade.narrower .text-center {
+	text-align: center !important;
+}
+.AngularCards .card.card-cascade.narrower .card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1.25rem;
+}
+.AngularCards .card.card-cascade.narrower .card-title {
+	margin-bottom: .75rem;
+}
+.AngularCards .card.card-cascade.narrower .btn-floating {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.AngularCards .card.card-cascade.narrower .btn-floating i {
+	display: inline-block;
+	width: inherit;
+	text-align: center;
+	color: #fff;
+	font-size: 1.25rem;
+	line-height: 47px;
+}
+.AngularCards .card.card-cascade.narrower .closeOut {
+	height: 33px;
+	width: 32px;
+	display: none;
+	position: absolute;
+	top: -35px;
+	right: -10px;
+}
+.AngularCards .card.card-cascade.narrower .closeOut img {
+	padding: 10px;
+	background: #fff;
+	border-radius: 20px;
+}
+.AngularCards .card.card-cascade.narrower:hover .closeOut {
+	display: block;
+}
+/*AngularCards*/
+
+a {
+	color: #2C3E50;
+}
+a:focus, a:hover, a:active {
+	color: #18BC9C;
+	text-decoration: none;
+}
+.btn {
+	border-width: 2px;
+}
+.bg-primary {
+	background-color: #000 !important;
+}
+.bg-gradient {
+	background: #2c3e50;
+	/* Old browsers */
+	background: -moz-linear-gradient(-45deg, #2c3e50 0%, #0d525a 51%, #002835 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #2c3e50 0%, #0d525a 51%, #002835 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #2c3e50 0%, #0d525a 51%, #002835 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3e50', endColorstr='#002835', GradientType=1);
+	/* IE6-9 fallback on horizontal gradient */
+}
+.bg-secondary {
+	background-color: #000000 !important;
+}
+.text-primary {
+	color: #2C3E50 !important;
+}
+.text-secondary {
+	color: #000000 !important;
+}
+.btn-primary {
+	background-color: #2C3E50;
+	border-color: #2C3E50;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background-color: #1a252f;
+	border-color: #1a252f;
+}
+.btn-secondary {
+	background-color: #000000;
+	border-color: #000000;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+	background-color: black;
+	border-color: black;
+}

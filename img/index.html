@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Card App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="/font-awesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+  </head>
+  <body class="AngularCards bg-gradient" ng-app="ceLebApp">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../img/resumeLogo.svg" class="img-fluid" />Portfolio</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.gsp#skills">Skills</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#history">History</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#testamony">Testimonials</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section>
+    <div id="main-content" class="container" ng-controller="mainCtrl">
+      <div class="row mt-5">
+          <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formBlock">
+          <i class="far fa-plus-square"></i>&nbsp; Add new Member
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="formBlock" tabindex="-1" role="dialog" aria-labelledby="formBlockTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="formBlockLongTitle">Add new Team Member</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form ng-submit="newNameCard()">
+                    <div class="floating-label-form-group">
+                      <label>Full Name</label>
+                      <input class="form-control" name="name" placeholder="Name" type="text" ng-model="ceLebname" ng-required />
+                    </div>
+                    <div class="floating-label-form-group">
+                      <label>Job Title</label>
+                      <input class="form-control" name="job" placeholder="Job Title"type="text" ng-model="ceLebjob" ng-required />
+                    </div>
+                    <div class="floating-label-form-group">
+                      <label>Photo URL</label>
+                      <input class="form-control" name="photo_url" placeholder="Photo Url" ng-model="ceLebphoto" ng-required>
+                    </div>
+                    <div class="floating-label-form-group">
+                      <label>LinkedIn</label>
+                      <input class="form-control" name="linked" placeholder="LinkedIn" type="text" ng-model="ceLeblinked" ng-required />
+                    </div>
+                    <div class="floating-label-form-group">
+                      <label>Photo URL</label>
+                      <input class="form-control" name="email" placeholder="email" ng-model="ceLebemail" ng-required>
+                    </div>
+                  <button type="submit" class="btn btn-primary btn-xl mt-3">Create</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row flex-row">
+          <div class="col-md-4 item-flex" ng-repeat="nameCard in nameCards | orderBy:'':true"  ng-class="{'editing-item': editing}">
+            <!-- Card Narrower -->
+            <div class="card card-cascade narrower flex-contain"  ng-click="editing = true">
+              <!-- Card image -->
+              <div class="view view-cascade overlay">
+                <img class="card-img-top" src="{{nameCard.photo_url}}" alt="Card image cap">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!-- Card content -->
+              <div class="card-body card-body-cascade text-center">
+                <!-- Title -->
+                <h4 class="card-title">{{nameCard.name}}</h4>
+                <h6 class="card-job-title">{{nameCard.job}}</h6>
+                  <!-- Facebook -->
+                 <a href="{{nameCard.linked}}" class="btn btn-outline-dark btn-social text-center rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                 <!-- Twitter -->
+                 <a href="mailto:{{nameCard.email}}" class="btn btn-outline-dark btn-social text-center rounded-circle"><i class="fas fa-envelope"></i></a>
+
+              </div>
+              <div class="closeOut" ng-click="remove(nameCard)">
+                <img src="img/close.png" class="img-responsive"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="push"></div>
+      </div><!-- end of content and main controler-->
+    </section>
+    <!-- Employee list goes here. There is initial data for you in application.js -->
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">
+              Austin,Tx
+            </p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <div class="svg"></div>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fas fa-cloud-download-alt"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Contact Information</h4>
+            <ul>
+              <li>
+                Phone: 512-694-3795
+              </li>
+              <li>
+                Email: <a href="mailto:cwilloughby132@gmail.com">cwilloughby132@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; NewHorizionLight 2018</small>
+      </div>
+    </div>
+  </body>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/underscore.js" type="text/javascript"></script>
+  <script src="/js/angular.min.js" type="text/javascript"></script>
+  <script src="application.js" type="text/javascript"></script>
+  </html>
